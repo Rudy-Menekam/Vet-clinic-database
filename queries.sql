@@ -72,7 +72,7 @@ ROLLBACK TO save_1;
 UPDATE animals SET weight_kg = (weight_kg * -1) WHERE weight_kg < 0;
 -- commit transaction
 COMMIT;
-SELECT * FROM animals
+SELECT * FROM animals;
 
 -- How many animals are there?
 SELECT COUNT(*) FROM animals;
@@ -92,3 +92,41 @@ FROM animals
 WHERE EXTRACT(YEAR FROM date_of_birth) 
 BETWEEN 1990 AND 2000 
 GROUP BY species;
+
+DELETE species FROM animals;
+
+-- Write queries (using JOIN) to answer the following questions:
+-- What animals belong to Melody Pond?
+SELECT owners.full_name, animals.name FROM owners JOIN animals ON animals.owner_id = owners.id WHERE owners.full_name = 'Melody Pond';
+-- Update List of all animals that are pokemon (their type is Pokemon).
+SELECT animals.name FROM animals JOIN species ON animals.species_id = species.id WHERE animals.species_id = 1;
+-- List all owners and their animals, remember to include those that don't own any animal.
+SELECT full_name, name FROM owners FULL OUTER JOIN animals ON owners.id = animals.owner_id;
+
+-- How many animals are there per species
+SELECT COUNT(species_id), (species.name)  FROM animals JOIN species ON animals.species_id = species.id GROUP BY species.name;
+
+-- Update List all Digimon owned by Jennifer Orwell.
+SELECT (animals.name) AS animalName, (species.name) AS speciesName, full_name FROM animals
+JOIN species ON animals.species_id = species.id
+JOIN owners ON animals.owner_id = owners.id
+WHERE species.id = 2 AND owner_id = 2;
+
+-- Update List all animals owned by Dean Winchester that haven't tried to escape.
+SELECT name, full_name FROM animals
+FULL OUTER JOIN owners ON animals.owner_id = owners.id
+WHERE escape_attempts = 0 AND owner_id = 5;
+
+-- Who owns the most animals?
+SELECT full_name, COUNT(owner_id) AS Total_animals FROM owners
+JOIN animals ON  owners.id = animals.owner_id
+GROUP BY full_name
+ORDER BY COUNT(name) DESC;
+
+SELECT owners.full_name, species.name, animals.name
+FROM owners
+INNER JOIN animals
+ON owners.owner_id = animals.owner_id
+INNER JOIN species
+ON animals.species_id = species.species_id
+WHERE owners.full_name = 'Jennifer Orwell' AND species.name = 'Digimon';
