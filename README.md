@@ -155,13 +155,20 @@ Example:
 
 <!-- AUTHORS -->
 
-## 👥 Author <a name="author"></a>
+## 👥 Authors <a name="authors"></a>
 
 👤 **Rudy Menekam**
 
 - GitHub: [@githubhandle](https://github.com/Rudy-Menekam)
 - Twitter: [@twitterhandle](https://twitter.com/MenekamR)
 - LinkedIn: [linkedIn](https://www.linkedin.com/in/menekam-rudy/)
+
+👤 **Alice Mirigo**
+
+- GitHub: [Alice Mirigo](https://github.com/alicemirigo92)
+- Twitter: [@Gathonimirigo](https://twitter.com/GathoniMirigo)
+- LinkedIn: [Alice](www.linkedin.com/in/alice-mirigo)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -220,7 +227,7 @@ I would like to acknowledge and thank [Microverse](https://www.microverse.org/) 
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](./LICENSE.md) licensed.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
