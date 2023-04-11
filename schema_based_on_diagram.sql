@@ -25,23 +25,23 @@ CREATE TABLE treatments (
     name varchar(50) NOT NULL
 );
 
-CREATE TABLE invoice_items (
-    id SERIAL PRIMARY KEY,
-    unit_price DECIMAL NOT NULL,
-    quantity int NOT NULL,
-    total_price DECIMAL NOT NULL,
-    invoice_id int NOT NULL,
-    treatment_id int NOT NULL
-);
+-- CREATE TABLE invoice_items (
+--     id SERIAL PRIMARY KEY,
+--     unit_price DECIMAL NOT NULL,
+--     quantity int NOT NULL,
+--     total_price DECIMAL NOT NULL,
+--     invoice_id int NOT NULL,
+--     treatment_id int NOT NULL
+-- );
 
-ALTER TABLE invoice_items 
-ADD FOREIGN KEY (invoice_id) REFERENCES invoices (id);
+-- ALTER TABLE invoice_items 
+-- ADD FOREIGN KEY (invoice_id) REFERENCES invoices (id);
 
-ALTER TABLE invoice_items 
-ADD FOREIGN KEY (treatment_id) REFERENCES treatments (id);
+-- ALTER TABLE invoice_items 
+-- ADD FOREIGN KEY (treatment_id) REFERENCES treatments (id);
 
-ALTER TABLE invoices 
-ADD FOREIGN KEY (medical_history_id) REFERENCES medical_histories (id);
+-- ALTER TABLE invoices 
+-- ADD FOREIGN KEY (medical_history_id) REFERENCES medical_histories (id);
 
-ALTER TABLE medical_histories 
-ADD FOREIGN KEY (patient_id) REFERENCES patients (id);
+-- ALTER TABLE medical_histories 
+-- ADD FOREIGN KEY (patient_id) REFERENCES patients (id);
