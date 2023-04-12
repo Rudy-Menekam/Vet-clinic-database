@@ -57,7 +57,9 @@
 - **[Create animals table]**
 - **[Record of clinic employees]**
 - **[Record of visits]**
+ **[Create database schemas]**
 - **[Create table of animals' owners]**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
